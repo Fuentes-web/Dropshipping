@@ -814,10 +814,38 @@
     <div class="cart__row"><span>Subtotal</span><b id="cartSubtotal">$0</b></div>
     <div class="cart__row cart__row--dim"><span>Express shipping</span><b id="cartShip">Free</b></div>
     <div class="cart__row cart__row--total"><span>Total</span><b id="cartTotal">$0</b></div>
-    <button class="btn btn--solid btn--block" type="button">Checkout</button>
+    <button class="btn btn--solid btn--block" id="checkoutBtn" type="button">Checkout</button>
     <p class="cart__note mono">Duties &amp; taxes included · 30-day returns</p>
   </footer>
 </aside>
+
+<!-- ─────────────────────────  CHECKOUT MODAL  ───────────────────────── -->
+<div class="scrim" id="checkoutScrim" hidden style="z-index: 110;"></div>
+<div class="checkout-modal" id="checkoutModal" hidden style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 120; width: 90%; max-width: 480px; background: #fff; border-radius: 12px; padding: 28px; box-shadow: 0 20px 40px rgba(0,0,0,0.25); color: #191512; font-family: inherit;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <h3 style="margin: 0; font-size: 1.3rem;">Complete Your Order</h3>
+    <button type="button" id="checkoutClose" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; line-height: 1;">&times;</button>
+  </div>
+  <form id="checkoutForm">
+    <div style="margin-bottom: 14px;">
+      <label style="display: block; font-size: 0.85rem; margin-bottom: 6px; font-weight: 600;">Customer Name</label>
+      <input type="text" id="custName" required placeholder="Luis Fuentes" style="width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.95rem; box-sizing: border-box;">
+    </div>
+    <div style="margin-bottom: 14px;">
+      <label style="display: block; font-size: 0.85rem; margin-bottom: 6px; font-weight: 600;">Email Address</label>
+      <input type="email" id="custEmail" required placeholder="luis@example.com" style="width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.95rem; box-sizing: border-box;">
+    </div>
+    <div style="margin-bottom: 20px;">
+      <label style="display: block; font-size: 0.85rem; margin-bottom: 6px; font-weight: 600;">Shipping Address</label>
+      <input type="text" id="custAddress" required placeholder="742 Evergreen Terrace, Springfield" style="width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.95rem; box-sizing: border-box;">
+    </div>
+    <div id="checkoutFeedback" style="display: none; padding: 12px; border-radius: 6px; margin-bottom: 16px; font-size: 0.9rem;"></div>
+    <div style="display: flex; gap: 10px;">
+      <button type="button" id="checkoutCancel" class="btn" style="flex: 1; border: 1px solid #ccc; background: #f5f5f5; cursor: pointer;">Cancel</button>
+      <button type="submit" id="checkoutSubmit" class="btn btn--solid" style="flex: 2; cursor: pointer;">Pay &amp; Place Order</button>
+    </div>
+  </form>
+</div>
 
 <script src="app.js"></script>
 </body>

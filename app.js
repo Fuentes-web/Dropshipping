@@ -10,6 +10,16 @@
   const money = n => '$' + n.toLocaleString('en-US');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // 0. API Configuración (vía Proxy Nginx /api/)
+  const API_BASE = '/api';
+  const SLUG_TO_ID = {
+    'aether': 1,
+    'halcyon': 2,
+    'vantage': 3,
+    'nomad': 4,
+    'solis': 5
+  };
+
   /* ─────────────────────────  1. Scroll reveals  ───────────────────────── */
   const revealables = $$('.reveal');
   revealables.forEach(el => {
@@ -134,8 +144,9 @@
 
   function addItem({ id, name, price }) {
     const existing = items.get(id);
+    const numId = SLUG_TO_ID[id] || (parseInt(id, 10) || 1);
     if (existing) existing.qty += 1;
-    else items.set(id, { id, name, price: Number(price), qty: 1 });
+    else items.set(id, { id, productId: numId, name, price: Number(price), qty: 1 });
     render();
 
     cartBtn.classList.remove('is-bumped');
@@ -213,6 +224,111 @@
     else if (trackerOpen) hideRoute();
   });
 
+  /* ─────────────────────────  4b. Checkout Modal & API Order Placement  ───────────────────────── */
+  const checkoutBtn      = $('#checkoutBtn');
+  const checkoutModal    = $('#checkoutModal');
+  const checkoutScrim    = $('#checkoutScrim');
+  const checkoutClose    = $('#checkoutClose');
+  const checkoutCancel   = $('#checkoutCancel');
+  const checkoutForm     = $('#checkoutForm');
+  const checkoutFeedback = $('#checkoutFeedback');
+  const checkoutSubmit   = $('#checkoutSubmit');
+
+  function openCheckout() {
+    if (items.size === 0) return;
+    checkoutScrim.hidden = false;
+    checkoutModal.hidden = false;
+    checkoutFeedback.style.display = 'none';
+    $('#custName').focus();
+  }
+
+  function closeCheckout() {
+    checkoutScrim.hidden = true;
+    checkoutModal.hidden = true;
+  }
+
+  if (checkoutBtn) checkoutBtn.addEventListener('click', openCheckout);
+  if (checkoutClose) checkoutClose.addEventListener('click', closeCheckout);
+  if (checkoutCancel) checkoutCancel.addEventListener('click', closeCheckout);
+  if (checkoutScrim) checkoutScrim.addEventListener('click', closeCheckout);
+
+  if (checkoutForm) {
+    checkoutForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (items.size === 0) return;
+
+      checkoutSubmit.disabled = true;
+      checkoutSubmit.textContent = 'Processing Payment...';
+      checkoutFeedback.style.display = 'block';
+      checkoutFeedback.style.background = '#e3f2fd';
+      checkoutFeedback.style.color = '#0d47a1';
+      checkoutFeedback.textContent = 'Connecting to payment gateway...';
+
+      const orderItems = [...items.values()].map(item => ({
+        product_id: Number(item.productId) || SLUG_TO_ID[item.id] || (parseInt(item.id, 10) || 1),
+        quantity: item.qty
+      }));
+
+      try {
+        const res = await fetch(`${API_BASE}/orders`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            customer_name: $('#custName').value.trim(),
+            customer_email: $('#custEmail').value.trim(),
+            shipping_address: $('#custAddress').value.trim(),
+            items: orderItems
+          })
+        });
+
+        if (res.status === 201) {
+          const data = await res.json();
+          checkoutFeedback.style.background = '#e8f5e9';
+          checkoutFeedback.style.color = '#1b5e20';
+          checkoutFeedback.innerHTML = `<b>✓ Payment Approved!</b><br>Order <b>${data.order_number}</b> saved to PostgreSQL.<br>Waybill loaded into Order Tracker below!`;
+          
+          if ($('#trackNo')) {
+            $('#trackNo').value = data.order_number;
+          }
+
+          items.clear();
+          render();
+          closeCart();
+
+          setTimeout(() => {
+            closeCheckout();
+            checkoutSubmit.disabled = false;
+            checkoutSubmit.textContent = 'Pay & Place Order';
+            const trackSec = $('#track');
+            if (trackSec) trackSec.scrollIntoView({ behavior: 'smooth' });
+            if ($('#trackBtn')) $('#trackBtn').click();
+          }, 2400);
+
+        } else if (res.status === 402) {
+          const err = await res.json();
+          checkoutFeedback.style.background = '#ffebee';
+          checkoutFeedback.style.color = '#b71c1c';
+          checkoutFeedback.innerHTML = `<b>⚠️ Payment Declined (Chaos Simulator):</b><br>${err.detail || 'Transaction rejected by card network'}.<br>Your cart is preserved. Click below to retry!`;
+          checkoutSubmit.disabled = false;
+          checkoutSubmit.textContent = 'Retry Payment';
+        } else {
+          const err = await res.json().catch(() => ({}));
+          checkoutFeedback.style.background = '#ffebee';
+          checkoutFeedback.style.color = '#b71c1c';
+          checkoutFeedback.textContent = `Error (${res.status}): ${err.detail || 'Could not place order'}`;
+          checkoutSubmit.disabled = false;
+          checkoutSubmit.textContent = 'Pay & Place Order';
+        }
+      } catch (err) {
+        checkoutFeedback.style.background = '#ffebee';
+        checkoutFeedback.style.color = '#b71c1c';
+        checkoutFeedback.textContent = 'Connection error: Unable to reach /api/orders.';
+        checkoutSubmit.disabled = false;
+        checkoutSubmit.textContent = 'Pay & Place Order';
+      }
+    });
+  }
+
   /* ─────────────────────────  5. FAQ accordion  ───────────────────────── */
   const qas = $$('.qa');
   qas.forEach(qa => {
@@ -224,7 +340,7 @@
     });
   });
 
-  /* ─────────────────────────  6. Order tracker (demo)  ───────────────────────── */
+  /* ─────────────────────────  6. Order tracker (API + Demo)  ───────────────────────── */
   const trackBtn   = $('#trackBtn');
   const trackInput = $('#trackNo');
   const trackHint  = $('#trackHint');
@@ -239,23 +355,38 @@
   }
 
   if (trackBtn) {
-    trackBtn.addEventListener('click', () => {
+    trackBtn.addEventListener('click', async () => {
       const value = (trackInput.value || '').trim().toUpperCase();
       trackHint.classList.remove('is-ok', 'is-err');
 
       if (!value) {
         trackHint.textContent = 'Enter a waybill number to continue.';
         trackHint.classList.add('is-err');
-      } else if (value === DEMO) {
+        return;
+      }
+
+      if (value === DEMO) {
         trackerOpen = true;
         trackHint.textContent = '✓ In transit — departed local depot 04:12 · arriving Thu, 2 Oct · signature not required';
         trackHint.classList.add('is-ok');
-      } else if (/^MSC-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{2}$/.test(value)) {
-        trackerOpen = true;
-        trackHint.textContent = '✓ Waybill received. Live tracking activates the moment the parcel is scanned out.';
-        trackHint.classList.add('is-ok');
-      } else {
-        trackHint.textContent = 'That format doesn\'t look right. Waybill numbers look like MSC-0000-0000-XX.';
+        return;
+      }
+
+      // Consulta en tiempo real a PostgreSQL vía /api/orders/track/{number}
+      trackHint.textContent = 'Checking order status in database...';
+      try {
+        const res = await fetch(`${API_BASE}/orders/track/${encodeURIComponent(value)}`);
+        if (res.ok) {
+          const o = await res.json();
+          trackerOpen = true;
+          trackHint.innerHTML = `<b>✓ Order Found:</b> ${o.order_number} · <b>Status:</b> ${o.status.toUpperCase()} · <b>Total:</b> $${o.total_amount} · <b>Destination:</b> ${o.shipping_address}`;
+          trackHint.classList.add('is-ok');
+        } else {
+          trackHint.textContent = `Order "${value}" was not found in PostgreSQL database. Double-check your number.`;
+          trackHint.classList.add('is-err');
+        }
+      } catch (err) {
+        trackHint.textContent = 'Connection error: Unable to reach tracking API.';
         trackHint.classList.add('is-err');
       }
     });
@@ -292,6 +423,18 @@
     });
   }
 
-  /* ─────────────────────────  8. Boot  ───────────────────────── */
+  /* ─────────────────────────  8. Boot & Catalog API Sync  ───────────────────────── */
   render();
+
+  async function syncCatalogFromAPI() {
+    try {
+      const res = await fetch(`${API_BASE}/products`);
+      if (!res.ok) return;
+      const products = await res.json();
+      console.log(`[Manifest API] Connected! ${products.length} products loaded from PostgreSQL.`);
+    } catch (e) {
+      console.log('[Manifest API] Running with local catalog fallback.');
+    }
+  }
+  syncCatalogFromAPI();
 })();
