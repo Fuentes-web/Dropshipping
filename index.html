@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manifest Supply Co. — Curated goods, shipped from anywhere to everywhere</title>
+<meta name="description" content="Manifest Supply Co. sources the world's best-made products, warehouses them regionally and dispatches within 24 hours. 2–5 day door-to-door delivery to 180 countries, duties paid, 30-day returns.">
+<meta name="theme-color" content="#F2EDE4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Archivo:ital,wght@0,300..800;1,300..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23191512'/%3E%3Cpath d='M8 22V10h7c4 0 6 2 6 5.5S19 21 15 21h-3v1H8zm4-4h3c1.4 0 2-.6 2-1.6s-.6-1.4-2-1.4h-3V18z' fill='%23DC3F1B'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ─────────────────────────  TICKER  ───────────────────────── -->
+<div class="ticker" role="region" aria-label="Store notices">
+  <div class="ticker__track">
+    <div class="ticker__group">
+      <span>Free express shipping over $75</span><i>✳</i>
+      <span>Dispatched within 24 hours</span><i>✳</i>
+      <span>Duties &amp; taxes prepaid</span><i>✳</i>
+      <span>30-day no-questions returns</span><i>✳</i>
+      <span>Shipping to 180 countries</span><i>✳</i>
+    </div>
+    <div class="ticker__group" aria-hidden="true">
+      <span>Free express shipping over $75</span><i>✳</i>
+      <span>Dispatched within 24 hours</span><i>✳</i>
+      <span>Duties &amp; taxes prepaid</span><i>✳</i>
+      <span>30-day no-questions returns</span><i>✳</i>
+      <span>Shipping to 180 countries</span><i>✳</i>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────  NAV  ───────────────────────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#main" aria-label="Manifest Supply Co. home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7"/><path d="M8 23V9h8.2c4.2 0 6.6 2.2 6.6 5.9 0 3.8-2.5 6.1-6.8 6.1h-3.4v2H8zm4.6-4.6h3.3c1.6 0 2.4-.7 2.4-1.9s-.8-1.7-2.4-1.7h-3.3v3.6z"/></svg>
+      </span>
+      <span class="brand__type">Manifest<em>Supply&nbsp;Co.</em></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#catalog">New in</a>
+      <a href="#catalog">Audio</a>
+      <a href="#catalog">Home</a>
+      <a href="#catalog">Wearables</a>
+      <a href="#logistics">How it ships</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="nav__track" href="#track">Track order</a>
+      <button class="cart-btn" id="cartBtn" aria-label="Open cart" aria-expanded="false" aria-controls="cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 7h12l1.4 12.2a1.6 1.6 0 0 1-1.6 1.8H6.2a1.6 1.6 0 0 1-1.6-1.8L6 7Z"/><path d="M9 7V5.8A3 3 0 0 1 12 3a3 3 0 0 1 3 2.8V7" fill="none"/></svg>
+        <span class="cart-btn__count" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ─────────────────────────  HERO  ───────────────────────── -->
+<section class="hero">
+  <div class="hero__inner">
+
+    <div class="hero__copy reveal">
+      <p class="eyebrow"><span class="dot"></span>Global sourcing · Regional warehouses · 24h dispatch</p>
+
+      <h1 class="hero__title">
+        The things you want,<br>
+        <span class="accent">already on their way.</span>
+      </h1>
+
+      <p class="hero__lede">
+        We hunt down the world's best-made products, park them in a warehouse near you,
+        and put them on a van the same day. Two to five days door to door —
+        not two to five months.
+      </p>
+
+      <div class="hero__cta">
+        <a class="btn btn--solid" href="#catalog">Shop bestsellers
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#track">Track an order</a>
+      </div>
+
+      <dl class="hero__stats">
+        <div><dt>2–5 days</dt><dd>average door-to-door</dd></div>
+        <div><dt>180</dt><dd>countries served</dd></div>
+        <div><dt>32,400+</dt><dd>five-star reviews</dd></div>
+        <div><dt>30 days</dt><dd>free returns, no fees</dd></div>
+      </dl>
+    </div>
+
+    <div class="hero__visual reveal" data-delay="120">
+      <div class="hero__plate">
+        <svg class="hero__product" viewBox="0 0 400 340" role="img" aria-label="Aether Studio wireless headphones">
+          <defs>
+            <radialGradient id="glowA" cx="50%" cy="42%" r="58%">
+              <stop offset="0%" stop-color="#FBF8F2" stop-opacity=".9"/>
+              <stop offset="100%" stop-color="#FBF8F2" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="200" cy="176" rx="176" ry="150" fill="url(#glowA)"/>
+          <path d="M126 214C126 108 274 108 274 214" fill="none" stroke="#191512" stroke-width="27" stroke-linecap="round"/>
+          <path d="M136 200C136 116 264 116 264 200" fill="none" stroke="#DC3F1B" stroke-width="7" stroke-linecap="round" opacity=".85"/>
+          <rect x="100" y="196" width="58" height="106" rx="29" fill="#191512"/>
+          <rect x="242" y="196" width="58" height="106" rx="29" fill="#191512"/>
+          <rect x="112" y="212" width="34" height="74" rx="17" fill="#2E4739"/>
+          <rect x="254" y="212" width="34" height="74" rx="17" fill="#2E4739"/>
+          <circle cx="129" cy="249" r="7" fill="#DC3F1B"/>
+          <circle cx="271" cy="249" r="7" fill="#DC3F1B"/>
+          <ellipse cx="200" cy="312" rx="132" ry="12" fill="#191512" opacity=".1"/>
+        </svg>
+      </div>
+
+      <!-- shipping manifest card -->
+      <div class="manifest" aria-hidden="true">
+        <div class="manifest__top">
+          <span class="manifest__lbl">Waybill</span>
+          <span class="manifest__no">MSC-4417-0928-QX</span>
+        </div>
+        <div class="manifest__barcode">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <ol class="manifest__steps">
+          <li class="done"><b>Sourced</b><span>Shenzhen · CN</span></li>
+          <li class="done"><b>Warehoused</b><span>Rotterdam · NL</span></li>
+          <li class="now"><b>In transit</b><span>Local depot</span></li>
+          <li><b>Delivered</b><span>Your door</span></li>
+        </ol>
+        <div class="manifest__eta">
+          <span>Est. arrival</span>
+          <b>Thu, 2 Oct</b>
+        </div>
+      </div>
+
+      <div class="hero__stamp">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <defs><path id="arc" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs>
+          <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="2.4" opacity=".5"/>
+          <circle cx="60" cy="60" r="33" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".38"/>
+          <text><textPath href="#arc" startOffset="0" textLength="276" lengthAdjust="spacing">DUTIES PREPAID · NO CUSTOMS FEES · EXPRESS AIR ·</textPath></text>
+          <path d="M47 61l9 9 19-21" fill="none"/>
+        </svg>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─────────────────────────  TRUST STRIP  ───────────────────────── -->
+<section class="strip" aria-label="Logistics partners">
+  <p class="strip__label">Fulfilled through</p>
+  <ul class="strip__list">
+    <li>DHL Express</li>
+    <li>UPS Worldwide</li>
+    <li>FedEx Priority</li>
+    <li>Royal Mail Tracked</li>
+    <li>YunExpress</li>
+    <li>Aramex</li>
+  </ul>
+</section>
+
+<!-- ─────────────────────────  CATALOG  ───────────────────────── -->
+<section class="catalog" id="catalog">
+  <div class="section-head reveal">
+    <div>
+      <p class="eyebrow"><span class="dot"></span>The catalog</p>
+      <h2 class="h2">Everything we carry,<br>we'd keep for ourselves.</h2>
+    </div>
+    <p class="section-head__note">
+      Two thousand products tested each month. Roughly forty survive.
+      Ranked below by how quickly they leave the warehouse.
+    </p>
+  </div>
+
+  <div class="chips reveal" role="tablist" aria-label="Filter products by category">
+    <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+    <button class="chip" data-filter="audio" role="tab" aria-selected="false">Audio</button>
+    <button class="chip" data-filter="home" role="tab" aria-selected="false">Home</button>
+    <button class="chip" data-filter="wearables" role="tab" aria-selected="false">Wearables</button>
+    <button class="chip" data-filter="footwear" role="tab" aria-selected="false">Footwear</button>
+    <button class="chip" data-filter="carry" role="tab" aria-selected="false">Everyday carry</button>
+    <button class="chip" data-filter="travel" role="tab" aria-selected="false">Travel</button>
+    <p class="chips__count mono" id="filterCount" role="status">12 products</p>
+  </div>
+
+  <div class="grid" id="productGrid">
+
+    <!-- 1 -->
+    <article class="card reveal" data-category="audio">
+      <a class="card__visual" href="#" style="--pv1:#E8E1D4; --pv2:#D9C9AC" aria-label="Aether Studio Wireless Headphones">
+        <svg viewBox="0 0 400 320" aria-hidden="true">
+          <path d="M132 196C132 92 268 92 268 196" fill="none" stroke="#191512" stroke-width="24" stroke-linecap="round"/>
+          <path d="M142 184C142 104 258 104 258 184" fill="none" stroke="#DC3F1B" stroke-width="6" stroke-linecap="round"/>
+          <rect x="108" y="178" width="54" height="98" rx="27" fill="#191512"/>
+          <rect x="238" y="178" width="54" height="98" rx="27" fill="#191512"/>
+          <rect x="119" y="193" width="32" height="68" rx="16" fill="#2E4739"/>
+          <rect x="249" y="193" width="32" height="68" rx="16" fill="#2E4739"/>
+          <ellipse cx="200" cy="288" rx="112" ry="10" fill="#191512" opacity=".12"/>
+        </svg>
+        <span class="tag tag--sale">−32%</span>
+      </a>
+      <div class="card__body">
+        <div class="card__meta"><span class="mono">Audio</span><span class="stars" aria-label="Rated 4.9 out of 5">★★★★★ <i>4.9</i></span></div>
+        <h3 class="card__name">Aether Studio Wireless Headphones</h3>
+        <p class="card__desc">Hybrid ANC, 60-hour battery, machined aluminium yokes.</p>
+        <div class="card__foot">
+          <p class="price"><b>$129</b> <s>$189</s></p>
+          <button class="add" data-id="aether" data-name="Aether Studio Wireless Headphones" data-price="129">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="card reveal" data-category="home" data-delay="60">
+      <a class="card__visual" href="#" style="--pv1:#EFE7D8; --pv2:#DCC9A6" aria-label="Halcyon Ceramic Table Lamp">
+        <svg viewBox="0 0 400 320" aria-hidden="true">
+          <ellipse cx="200" cy="216" rx="126" ry="88" fill="#FBF8F2" opacity=".6"/>
+          <path d="M146 92h108l38 108H108z" fill="#DC3F1B"/>
+          <path d="M146 92h108l10 28H136z" fill="#C2360F"/>
+          <rect x="190" y="200" width="20" height="66" rx="6" fill="#191512"/>
+          <ellipse cx="200" cy="272" rx="78" ry="15" fill="#191512"/>
+          <ellipse cx="200" cy="266" rx="60" ry="10" fill="#2E4739"/>
+          <rect x="132" y="196" width="136" height="10" rx="5" fill="#191512" opacity=".18"/>
+        </svg>
+        <span class="tag">Bestseller</span>
+      </a>
+      <div class="card__body">
+        <div class="card__meta"><span class="mono">Home</span><span class="stars" aria-label="Rated 4.8 out of 5">★★★★★ <i>4.8</i></span></div>
+        <h3 class="card__name">Halcyon Ceramic Table Lamp</h3>
+        <p class="card__desc">Hand-thrown stoneware base, linen shade, warm dimmable LED.</p>
+        <div class="card__foot">
+          <p class="price"><b>$86</b></p>
+          <button class="add" data-id="halcyon" data-name="Halcyon Ceramic Table Lamp" data-price="86">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="card reveal" data-category="wearables" data-delay="120">
+      <a class="card__visual" href="#" style="--pv1:#2E4739; --pv2:#253A2E" aria-label="Meridian Automatic Watch">
+        <svg viewBox="0 0 400 320" aria-hidden="true">
+          <rect x="168" y="34" width="64" height="122" rx="22" fill="#191512"/>
+          <rect x="168" y="188" width="64" height="122" rx="22" fill="#191512"/>
+          <rect x="178" y="52" width="44" height="8" rx="4" fill="#D9C9AC" opacity=".45"/>
+          <rect x="178" y="284" width="44" height="8" rx="4" fill="#D9C9AC" opacity=".45"/>
+          <circle cx="200" cy="172" r="82" fill="#D9C9AC"/>
+          <circle cx="200" cy="172" r="70" fill="#F2EDE4"/>
+          <circle cx="200" cy="172" r="70" fill="none" stroke="#191512" stroke-width="3" opacity=".2"/>
+          <path d="M200 172V126M200 172l32 22" stroke="#191512" stroke-width="7" stroke-linecap="round" fill="none"/>
+          <circle cx="200" cy="172" r="7" fill="#DC3F1B"/>
+          <rect x="278" y="160" width="14" height="26" rx="5" fill="#D9C9AC"/>
+          <g stroke="#191512" stroke-width="3" stroke-linecap="round" opacity=".55">
+            <path d="M200 112v10M200 222v10M140 172h10M250 172h10"/>
+          </g>
+        </svg>
+        <span class="tag tag--new">New</span>
+      </a>
+      <div class="card__body">
+        <div class="card__meta"><span class="mono">Wearables</span><span class="stars" aria-label="Rated 4.9 out of 5">★★★★★ <i>4.9</i></span></div>
+        <h3 class="card__name">Meridian 38 Automatic Watch</h3>
+        <p class="card__desc">Sapphire crystal, 42-hour Miyota movement, 100m water resistance.</p>
+        <div class="card__foot">
+          <p class="price"><b>$219</b></p>
+          <button class="add" data-id="meridian" data-name="Meridian 38 Automatic Watch" data-price="219">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="card reveal" data-category="footwear">
+      <a class="card__visual" href="#" style="--pv1:#E8E1D4; --pv2:#D3C4AC" aria-label="Drift Runner Sneakers">
+        <svg viewBox="0 0 400 320" aria-hidden="true">
+          <!-- upper: rounded toe low-left, tall heel right -->
+          <path d="M108 222c-3-31 11-53 45-65l48-18c22-8 36-19 58-19h32c29 0 47 19 47 50v52z" fill="#DC3F1B"/>
+          <!-- toe cap -->
+          <path d="M108 222c-3-31 11-53 45-65l20-7 6 32c1 15-8 24-24 27l-47 13z" fill="#C2360F"/>
+          <!-- ankle collar opening -->
+          <path d="M266 120h32c13 0 21 9 21 22s-8 22-21 22h-32c-13 0-21-9-21-22s8-22 21-22z" fill="#191512" opacity=".24"/>
+          <!-- side stripe -->
+          <path d="M116 212c48-13 88-36 120-68l29 22c-36 36-82 61-131 72z" fill="#FBF8F2" opacity=".42"/>
+          <!-- laces -->
+          <g stroke="#FBF8F2" stroke-width="7" stroke-linecap="round" opacity=".88">
+            <path d="M166 140l31 22M180 128l31 22M194 116l31 22M208 104l31 22"/>
+          </g>
+          <!-- heel tab -->
+          <rect x="332" y="146" width="16" height="48" rx="8" fill="#191512" opacity=".28"/>
+          <!-- sole -->
+          <path d="M72 220h290c16 0 26 10 26 21s-9 21-24 21H84c-16 0-25-10-25-21 0-11 4-21 13-21z" fill="#191512"/>
+          <path d="M64 242h318" stroke="#F2EDE4" stroke-width="5" stroke-linecap="round" opacity=".3"/>
+          <ellipse cx="212" cy="278" rx="142" ry="11" fill="#191512" opacity=".11"/>
+        </svg>
+        <span class="tag tag--low">Low stock</span>
+      </a>
+      <div class="card__body">
+        <div class="card__meta"><span class="mono">Footwear</span><span class="stars" aria-label="Rated 4.7 out of 5">★★★★★ <i>4.7</i></span></div>
+        <h3 class="card__name">Drift Runner Everyday Sneaker</h3>
+        <p class="card__desc">Knit upper, recycled foam midsole, ships in three colourways.</p>
+        <div class="card__foot">
+          <p class="price"><b>$98</b> <s>$134</s></p>
+          <button class="add" data-id="drift" data-name="Drift Runner Everyday Sneaker" data-price="98">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="card reveal" data-category="carry" data-delay="60">
+      <a class="card__visual" href="#" style="--pv1:#EFE7D8; --pv2:#DCC9A6" aria-label="Fieldstone Insulated Bottle">
+        <svg viewBox="0 0 400 320" aria-hidden="true">
+          <rect x="150" y="104" width="100" height="168" rx="28" fill="#2E4739"/>
+          <rect x="150" y="104" width="38" height="168" rx="28" fill="#3A5A48"/>
+          <rect x="178" y="62" width="44" height="48" rx="10" fill="#191512"/>
+          <rect x="168" y="44" width="64" height="26" rx="10" fill="#191512"/>
+          <rect x="150" y="164" width="100" height="58" fill="#F2EDE4"/>
+          <rect x="150" y="164" width="100" height="8" fill="#DC3F1B"/>
+          <rect x="150" y="214" width="100" height="8" fill="#DC3F1B"/>
+          <path d="M168 188h64" stroke="#191512" stroke-width="5" stroke-linecap="round" opacity=".35"/>
+          <ellipse cx="200" cy="286" rx="72" ry="10" fill="#191512" opacity=".12"/>
+        </svg>
+        <span class="tag">Top rated</span>
+      </a>
+      <div class="card__body">
+        <div class="card__meta"><span class="mono">Everyday carry</span><span class="stars" aria-label="Rated 4.8 out of 5">★★★★★ <i>4.8</i></span></div>
+        <h3 class="card__name">Fieldstone Insulated Bottle</h3>
+        <p class="card__desc">18/8 steel, 24 hours cold, powder-coat finish that doesn't chip.</p>
+        <div class="card__foot">
+          <p class="price"><b>$42</b></p>
+          <button class="add" data-id="fieldstone" data-name="Fieldstone Insulated Bottle" data-price="42">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="card reveal" data-category="travel" data-delay="120">
+      <a class="card__visual" href="#" style="--pv1:#DCC9A6; --pv2:#CBB28B" aria-label="Nomad Weekender Bag">
+        <svg viewBox="0 0 400 320" aria-hidden="true">
+          <path d="M148 148c0-56 104-56 104 0" fill="none" stroke="#191512" stroke-width="17" stroke-linecap="round"/>
+          <rect x="72" y="144" width="256" height="122" rx="20" fill="#2E4739"/>
+          <rect x="72" y="144" width="256" height="24" rx="12" fill="#3A5A48"/>
+          <rect x="112" y="182" width="176" height="62" rx="12" fill="#253A2E"/>
+          <path d="M112 213h176" stroke="#D9C9AC" stroke-width="3" opacity=".45"/>
+          <rect x="188" y="176" width="24" height="12" rx="4" fill="#D9C9AC"/>
+          <rect x="72" y="140" width="256" height="8" fill="#DC3F1B" opacity=".85"/>
+          <ellipse cx="200" cy="278" rx="122" ry="11" fill="#191512" opacity=".13"/>
+        </svg>
+        <span class="tag tag--sale">−21%</span>
+      </a>
+      <div class="card__body">
+        <div class="card__meta"><span class="mono">Travel</span><span class="stars" aria-label="Rated 4.9 out of 5">★★★★★ <i>4.9</i></span></div>
+        <h3 class="card__name">Nomad 42L Weekender Bag</h3>
+        <p class="card__desc">Waxed canvas, leather trim, cabin-legal on every major airline.</p>
+        <div class="card__foot">
+          <p class="price"><b>$164</b> <s>$208</s></p>
+          <button class="add" data-id="nomad" data-name="Nomad 42L Weekender Bag" data-price="164">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7 -->
+    <article class="card reveal" data-category="audio">
+      <a class="card__visual" href="#" style="--pv1:#E8E1D4; --pv2:#CFC0A4" aria-label="Solace Mini Earbuds">
+        <svg viewBox="0 0 400 320" aria-hidden="true">
+          <rect x="118" y="132" width="164" height="118" rx="30" fill="#191512"/>
+          <rect x="118" y="132" width="164" height="28" rx="14" fill="#2E4739"/>
+          <rect x="142" y="88" width="46" height="52" rx="23" fill="#2E4739"/>
+          <rect x="212" y="88" width="46" height="52" rx="23" fill="#2E4739"/>
+          <rect x="158" y="106" width="15" height="38" rx="7.5" fill="#D9C9AC"/>
+          <rect x="228" y="106" width="15" height="38" rx="7.5" fill="#D9C9AC"/>
+          <circle cx="200" cy="206" r="11" fill="#DC3F1B"/>
+          <ellipse cx="200" cy="266" rx="106" ry="11" fill="#191512" opacity=".12"/>
+        </svg>
+        <span class="tag tag--new">New</span>
+      </a>
+      <div class="card__body">
+        <div class="card__meta"><span class="mono">Audio</span><span class="stars" aria-label="Rated 4.8 out of 5">★★★★★ <i>4.8</i></span></div>
+        <h3 class="card__name">Solace Mini Earbuds</h3>
+        <p class="card__desc">Pocketable charging case, 32 hours combined, IPX5 sweat-proof.</p>
+        <div class="card__foot">
+          <p class="price"><b>$74</b> <s>$99</s></p>
+          <button class="add" data-id="solace" data-name="Solace Mini Earbuds" data-price="74">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 8 -->
+    <article class="card reveal" data-category="home" data-delay="60">
+      <a class="card__visual" href="#" style="--pv1:#EFE7D8; --pv2:#D9C9AC" aria-label="Alder Stonewashed Linen Throw">
+        <svg viewBox="0 0 400 320" aria-hidden="true">
+          <rect x="94" y="194" width="212" height="60" rx="13" fill="#2E4739"/>
+          <rect x="108" y="146" width="184" height="54" rx="13" fill="#3A5A48"/>
+          <rect x="122" y="100" width="156" height="52" rx="13" fill="#D9C9AC"/>
+          <g stroke="#FBF8F2" stroke-width="4" stroke-linecap="round" opacity=".32">
+            <path d="M94 224h212M108 173h184M122 126h156"/>
+          </g>
+          <rect x="176" y="80" width="48" height="28" rx="10" fill="#DC3F1B"/>
+          <ellipse cx="200" cy="272" rx="120" ry="11" fill="#191512" opacity=".11"/>
+        </svg>
+        <span class="tag">Bestseller</span>
+      </a>
+      <div class="card__body">
+        <div class="card__meta"><span class="mono">Home</span><span class="stars" aria-label="Rated 4.9 out of 5">★★★★★ <i>4.9</i></span></div>
+        <h3 class="card__name">Alder Stonewashed Linen Throw</h3>
+        <p class="card__desc">100% European flax, pre-washed, softer with every wash.</p>
+        <div class="card__foot">
+          <p class="price"><b>$68</b></p>
+          <button class="add" data-id="alder" data-name="Alder Stonewashed Linen Throw" data-price="68">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 9 -->
+    <article class="card reveal" data-category="wearables" data-delay="120">
+      <a class="card__visual" href="#" style="--pv1:#2E4739; --pv2:#22352A" aria-label="Halo Fitness Band">
+        <svg viewBox="0 0 400 320" aria-hidden="true">
+          <rect x="168" y="38" width="64" height="102" rx="26" fill="#191512"/>
+          <rect x="168" y="182" width="64" height="102" rx="26" fill="#191512"/>
+          <rect x="150" y="112" width="100" height="112" rx="28" fill="#DC3F1B"/>
+          <rect x="165" y="128" width="70" height="80" rx="18" fill="#191512"/>
+          <path d="M178 172h13l9-20 11 38 9-18h11" stroke="#8FD9A8" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse cx="200" cy="296" rx="92" ry="10" fill="#191512" opacity=".12"/>
+        </svg>
+        <span class="tag tag--low">Low stock</span>
+      </a>
+      <div class="card__body">
+        <div class="card__meta"><span class="mono">Wearables</span><span class="stars" aria-label="Rated 4.6 out of 5">★★★★★ <i>4.6</i></span></div>
+        <h3 class="card__name">Halo Fitness Band</h3>
+        <p class="card__desc">Continuous heart-rate, sleep staging, 14-day battery life.</p>
+        <div class="card__foot">
+          <p class="price"><b>$59</b> <s>$79</s></p>
+          <button class="add" data-id="halo" data-name="Halo Fitness Band" data-price="59">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10 -->
+    <article class="card reveal" data-category="footwear">
+      <a class="card__visual" href="#" style="--pv1:#E8E1D4; --pv2:#C6B899" aria-label="Ridgeline Trail Sneaker">
+        <svg viewBox="0 0 400 320" aria-hidden="true">
+          <path d="M108 222c-3-31 11-53 45-65l48-18c22-8 36-19 58-19h32c29 0 47 19 47 50v52z" fill="#2E4739"/>
+          <path d="M108 222c-3-31 11-53 45-65l20-7 6 32c1 15-8 24-24 27l-47 13z" fill="#22352A"/>
+          <path d="M266 120h32c13 0 21 9 21 22s-8 22-21 22h-32c-13 0-21-9-21-22s8-22 21-22z" fill="#191512" opacity=".24"/>
+          <path d="M116 212c48-13 88-36 120-68l29 22c-36 36-82 61-131 72z" fill="#FBF8F2" opacity=".4"/>
+          <g stroke="#FBF8F2" stroke-width="7" stroke-linecap="round" opacity=".85">
+            <path d="M166 140l31 22M180 128l31 22M194 116l31 22M208 104l31 22"/>
+          </g>
+          <rect x="332" y="146" width="16" height="48" rx="8" fill="#191512" opacity=".28"/>
+          <path d="M72 220h290c16 0 26 10 26 21s-9 21-24 21H84c-16 0-25-10-25-21 0-11 4-21 13-21z" fill="#191512"/>
+          <path d="M64 242h318" stroke="#DC3F1B" stroke-width="5" stroke-linecap="round" opacity=".65"/>
+          <ellipse cx="212" cy="278" rx="142" ry="11" fill="#191512" opacity=".11"/>
+        </svg>
+        <span class="tag tag--sale">−18%</span>
+      </a>
+      <div class="card__body">
+        <div class="card__meta"><span class="mono">Footwear</span><span class="stars" aria-label="Rated 4.8 out of 5">★★★★★ <i>4.8</i></span></div>
+        <h3 class="card__name">Ridgeline Trail Sneaker</h3>
+        <p class="card__desc">Lugged rubber outsole, water-repellent upper, gusseted tongue.</p>
+        <div class="card__foot">
+          <p class="price"><b>$112</b> <s>$136</s></p>
+          <button class="add" data-id="ridgeline" data-name="Ridgeline Trail Sneaker" data-price="112">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 11 -->
+    <article class="card reveal" data-category="carry" data-delay="60">
+      <a class="card__visual" href="#" style="--pv1:#EFE7D8; --pv2:#D2BE9B" aria-label="Aperture Leather Card Holder">
+        <svg viewBox="0 0 400 320" aria-hidden="true">
+          <rect x="110" y="122" width="178" height="112" rx="13" fill="#B9A47F"/>
+          <rect x="124" y="108" width="178" height="112" rx="13" fill="#D9C9AC"/>
+          <rect x="138" y="94" width="178" height="112" rx="13" fill="#2E4739"/>
+          <path d="M138 138h178" stroke="#191512" stroke-width="4" opacity=".38"/>
+          <rect x="176" y="158" width="106" height="13" rx="6.5" fill="#D9C9AC" opacity=".55"/>
+          <rect x="176" y="178" width="72" height="13" rx="6.5" fill="#D9C9AC" opacity=".35"/>
+          <circle cx="292" cy="120" r="10" fill="#DC3F1B"/>
+          <ellipse cx="228" cy="242" rx="114" ry="11" fill="#191512" opacity=".11"/>
+        </svg>
+        <span class="tag">Top rated</span>
+      </a>
+      <div class="card__body">
+        <div class="card__meta"><span class="mono">Everyday carry</span><span class="stars" aria-label="Rated 4.7 out of 5">★★★★★ <i>4.7</i></span></div>
+        <h3 class="card__name">Aperture Leather Card Holder</h3>
+        <p class="card__desc">Full-grain vegetable-tanned leather, four slots, one note pocket.</p>
+        <div class="card__foot">
+          <p class="price"><b>$38</b></p>
+          <button class="add" data-id="aperture" data-name="Aperture Leather Card Holder" data-price="38">Add</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 12 -->
+    <article class="card reveal" data-category="travel" data-delay="120">
+      <a class="card__visual" href="#" style="--pv1:#DCC9A6; --pv2:#BFA67F" aria-label="Compass Packing Cube Set">
+        <svg viewBox="0 0 400 320" aria-hidden="true">
+          <rect x="78" y="178" width="122" height="88" rx="13" fill="#2E4739"/>
+          <rect x="212" y="152" width="110" height="114" rx="13" fill="#3A5A48"/>
+          <rect x="136" y="92" width="128" height="74" rx="13" fill="#DC3F1B"/>
+          <g stroke="#FBF8F2" stroke-width="4" stroke-linecap="round" opacity=".34">
+            <path d="M78 216h122M212 198h110M136 128h128"/>
+          </g>
+          <rect x="122" y="210" width="44" height="13" rx="6.5" fill="#D9C9AC"/>
+          <rect x="242" y="186" width="44" height="13" rx="6.5" fill="#D9C9AC"/>
+          <rect x="180" y="118" width="44" height="13" rx="6.5" fill="#D9C9AC"/>
+          <ellipse cx="200" cy="282" rx="134" ry="11" fill="#191512" opacity=".11"/>
+        </svg>
+        <span class="tag tag--new">New</span>
+      </a>
+      <div class="card__body">
+        <div class="card__meta"><span class="mono">Travel</span><span class="stars" aria-label="Rated 4.8 out of 5">★★★★★ <i>4.8</i></span></div>
+        <h3 class="card__name">Compass Packing Cube Set</h3>
+        <p class="card__desc">Three sizes, ripstop nylon, mesh tops so you can see what's inside.</p>
+        <div class="card__foot">
+          <p class="price"><b>$54</b></p>
+          <button class="add" data-id="compass" data-name="Compass Packing Cube Set" data-price="54">Add</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <p class="catalog__more"><a class="link-arrow" href="#">View all 42 products <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none"/></svg></a></p>
+</section>
+
+<!-- ─────────────────────────  LOGISTICS  ───────────────────────── -->
+<section class="logistics" id="logistics">
+  <div class="logistics__inner">
+    <div class="logistics__head reveal">
+      <p class="eyebrow eyebrow--light"><span class="dot"></span>Why it arrives so fast</p>
+      <h2 class="h2 h2--light">We took the ocean<br>out of the equation.</h2>
+      <p class="logistics__lede">
+        Traditional dropshipping puts a factory and an ocean between you and your parcel.
+        We invert it: the stock is already sitting in your region before you click buy.
+      </p>
+    </div>
+
+    <ol class="steps">
+      <li class="reveal">
+        <span class="steps__num">01</span>
+        <h3>We source it first.</h3>
+        <p>Our buyers put thousands of products through 90 days of real use. Most fail.
+           The ones that don't become the catalog — no fads, no filler.</p>
+      </li>
+      <li class="reveal" data-delay="80">
+        <span class="steps__num">02</span>
+        <h3>We park it near you.</h3>
+        <p>Inventory sits in eleven regional warehouses across four continents.
+           Your order is routed to the one closest to your door, automatically.</p>
+      </li>
+      <li class="reveal" data-delay="160">
+        <span class="steps__num">03</span>
+        <h3>We hand it off in 24h.</h3>
+        <p>Order before 2pm local and it leaves the same day — tracked end to end,
+           duties and taxes already paid, no customs letter waiting for you.</p>
+      </li>
+    </ol>
+
+    <div class="logistics__route reveal" id="track">
+      <div class="route">
+        <div class="route__row">
+          <label for="trackNo" class="route__label">Enter your waybill number</label>
+          <input id="trackNo" class="route__input mono" type="text" placeholder="MSC-0000-0000-XX" autocomplete="off">
+          <button class="btn btn--accent" id="trackBtn" type="button">Track</button>
+        </div>
+        <p class="route__hint mono" id="trackHint">Try the demo waybill: MSC-4417-0928-QX</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────  SPOTLIGHT  ───────────────────────── -->
+<section class="spotlight">
+  <div class="spotlight__visual reveal">
+    <svg viewBox="0 0 520 440" role="img" aria-label="Aether Studio Wireless Headphones in detail">
+      <defs>
+        <radialGradient id="glowB" cx="46%" cy="40%" r="62%">
+          <stop offset="0%" stop-color="#FBF8F2" stop-opacity=".85"/>
+          <stop offset="100%" stop-color="#FBF8F2" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="260" cy="212" rx="230" ry="196" fill="url(#glowB)"/>
+      <path d="M152 254C152 108 368 108 368 254" fill="none" stroke="#191512" stroke-width="36" stroke-linecap="round"/>
+      <path d="M168 236C168 124 352 124 352 236" fill="none" stroke="#DC3F1B" stroke-width="10" stroke-linecap="round" opacity=".9"/>
+      <rect x="118" y="238" width="76" height="132" rx="38" fill="#191512"/>
+      <rect x="326" y="238" width="76" height="132" rx="38" fill="#191512"/>
+      <rect x="134" y="258" width="44" height="92" rx="22" fill="#2E4739"/>
+      <rect x="342" y="258" width="44" height="92" rx="22" fill="#2E4739"/>
+      <circle cx="156" cy="304" r="9" fill="#DC3F1B"/>
+      <circle cx="364" cy="304" r="9" fill="#DC3F1B"/>
+      <ellipse cx="260" cy="386" rx="182" ry="15" fill="#191512" opacity=".1"/>
+    </svg>
+    <div class="spotlight__stamp mono">EDITION 04 · 2026</div>
+  </div>
+
+  <div class="spotlight__copy reveal" data-delay="100">
+    <p class="eyebrow"><span class="dot"></span>Product of the month</p>
+    <h2 class="h2">Aether Studio<br>Wireless Headphones</h2>
+    <p class="spotlight__price"><b>$129</b> <s>$189</s> <span class="pill">You save $60</span></p>
+    <p class="spotlight__lede">
+      Two years in development, 41 prototypes, one very stubborn acoustic engineer.
+      Hybrid noise cancellation that actually handles a plane cabin, 60 hours on a charge,
+      and a headband that doesn't leave a mark after hour six.
+    </p>
+
+    <ul class="specs">
+      <li><span>Battery</span><b>60 hours (ANC on: 42)</b></li>
+      <li><span>Drivers</span><b>40mm beryllium-coated</b></li>
+      <li><span>Codecs</span><b>LDAC · aptX Adaptive · AAC</b></li>
+      <li><span>Weight</span><b>248g</b></li>
+      <li><span>In the box</span><b>Case, 3.5mm, USB-C, adapter</b></li>
+    </ul>
+
+    <div class="spotlight__actions">
+      <button class="btn btn--solid add" data-id="aether" data-name="Aether Studio Wireless Headphones" data-price="129">Add to cart — $129</button>
+      <a class="btn btn--ghost" href="#catalog">See all audio</a>
+    </div>
+    <p class="spotlight__ship mono">In stock · Ships today from Rotterdam &amp; New Jersey</p>
+  </div>
+</section>
+
+<!-- ─────────────────────────  QUOTES  ───────────────────────── -->
+<section class="quotes">
+  <div class="section-head reveal">
+    <div>
+      <p class="eyebrow"><span class="dot"></span>What people say</p>
+      <h2 class="h2">32,400 reviews.<br>Here are three.</h2>
+    </div>
+    <p class="section-head__note">Verified purchases, unedited, pulled from the last thirty days.</p>
+  </div>
+
+  <div class="quotes__grid">
+    <figure class="quote reveal">
+      <blockquote>“Ordered on a Tuesday, wearing them Thursday. I've waited longer for a pizza.”</blockquote>
+      <figcaption><b>Dani R.</b><span>Rotterdam, NL · Aether Studio</span></figcaption>
+    </figure>
+    <figure class="quote reveal" data-delay="80">
+      <blockquote>“The tracking actually works. I knew where the box was at every single step.”</blockquote>
+      <figcaption><b>Marcus T.</b><span>Austin, TX · Meridian 38</span></figcaption>
+    </figure>
+    <figure class="quote reveal" data-delay="160">
+      <blockquote>“Returned a size, refund landed in two days. No email ping-pong, no restocking fee.”</blockquote>
+      <figcaption><b>Aiko M.</b><span>Osaka, JP · Drift Runner</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ─────────────────────────  FAQ  ───────────────────────── -->
+<section class="faq" id="faq">
+  <div class="faq__grid">
+    <div class="faq__aside reveal">
+      <p class="eyebrow"><span class="dot"></span>Fine print, plainly</p>
+      <h2 class="h2">Questions we<br>actually get.</h2>
+
+      <div class="guarantee">
+        <p class="guarantee__title">The Manifest Guarantee</p>
+        <ul>
+          <li>Delivered in 5 days or your shipping is refunded.</li>
+          <li>Duties and taxes prepaid — the price you see is the price you pay.</li>
+          <li>30-day returns, prepaid label included, no restocking fee.</li>
+          <li>Broken in transit? Replaced before you send anything back.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq__list reveal" data-delay="100">
+      <details class="qa" open>
+        <summary>How fast is delivery, really?<span class="qa__icon" aria-hidden="true"></span></summary>
+        <div class="qa__body"><p>2–5 business days to most of North America, the UK, the EU, Australia and East Asia.
+        5–8 days elsewhere. Every parcel leaves the warehouse within 24 hours of the order,
+        and the countdown you see on the product page is the real one.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary>Will I pay customs or import duties?<span class="qa__icon" aria-hidden="true"></span></summary>
+        <div class="qa__body"><p>No. We ship DDP — delivered duty paid — to all 180 countries we serve.
+        The amount at checkout is the total. There is no second invoice and no customs letter.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary>What if it doesn't fit, or I change my mind?<span class="qa__icon" aria-hidden="true"></span></summary>
+        <div class="qa__body"><p>Send it back within 30 days for a full refund. The return label is prepaid and
+        printed from your order page. Refunds are issued the day the parcel is scanned by the carrier.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary>Where are the products made?<span class="qa__icon" aria-hidden="true"></span></summary>
+        <div class="qa__body"><p>It depends on the category — audio in Shenzhen and Vietnam, ceramics in Portugal,
+        footwear in Ho Chi Minh City, luggage in Ubrique. Every product page lists the factory region,
+        the materials and the audit status of the facility.</p></div>
+      </details>
+
+      <details class="qa">
+        <summary>How do I track my order?<span class="qa__icon" aria-hidden="true"></span></summary>
+        <div class="qa__body"><p>You get a waybill number the moment the parcel is scanned out, plus
+        push updates at every handover. Or paste the number into the tracker above at any time.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────  CTA  ───────────────────────── -->
+<section class="cta">
+  <div class="cta__inner reveal">
+    <div>
+      <p class="eyebrow eyebrow--light"><span class="dot"></span>The drop list</p>
+      <h2 class="h2 h2--light">Five products moving fastest,<br>every Thursday morning.</h2>
+    </div>
+    <form class="cta__form" id="newsletter" novalidate>
+      <div class="cta__field">
+        <label class="sr-only" for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+        <button class="btn btn--accent" type="submit">Subscribe</button>
+      </div>
+      <p class="cta__note" id="newsletterNote">One email a week. Unsubscribe in one click. We never sell addresses.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ─────────────────────────  FOOTER  ───────────────────────── -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <a class="brand brand--light" href="#main">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7"/><path d="M8 23V9h8.2c4.2 0 6.6 2.2 6.6 5.9 0 3.8-2.5 6.1-6.8 6.1h-3.4v2H8zm4.6-4.6h3.3c1.6 0 2.4-.7 2.4-1.9s-.8-1.7-2.4-1.7h-3.3v3.6z"/></svg>
+        </span>
+        <span class="brand__type">Manifest<em>Supply&nbsp;Co.</em></span>
+      </a>
+      <p class="footer__blurb">Curated goods, shipped from anywhere to everywhere.
+      Warehouses in eleven cities. Dispatched within 24 hours.</p>
+      <p class="footer__addr mono">Manifest Supply Co. · Keizersgracht 241 · 1016 EA Amsterdam</p>
+    </div>
+
+    <nav class="footer__cols" aria-label="Footer">
+      <div>
+        <p class="footer__h">Shop</p>
+        <a href="#catalog">New arrivals</a>
+        <a href="#catalog">Bestsellers</a>
+        <a href="#catalog">Audio</a>
+        <a href="#catalog">Home &amp; living</a>
+        <a href="#catalog">Gift cards</a>
+      </div>
+      <div>
+        <p class="footer__h">Support</p>
+        <a href="#track">Track an order</a>
+        <a href="#faq">Shipping &amp; delivery</a>
+        <a href="#faq">Returns &amp; refunds</a>
+        <a href="#faq">Warranty</a>
+        <a href="#faq">Contact us</a>
+      </div>
+      <div>
+        <p class="footer__h">Company</p>
+        <a href="#">Our sourcing standard</a>
+        <a href="#">Factory audits</a>
+        <a href="#">Careers</a>
+        <a href="#">Press kit</a>
+        <a href="#">Affiliates</a>
+      </div>
+      <div>
+        <p class="footer__h">Legal</p>
+        <a href="#">Terms of service</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Cookie settings</a>
+        <a href="#">Accessibility</a>
+      </div>
+    </nav>
+  </div>
+
+  <div class="footer__bottom">
+    <p class="mono">© 2026 Manifest Supply Co. All rights reserved.</p>
+    <ul class="pay" aria-label="Accepted payment methods">
+      <li>Visa</li><li>Mastercard</li><li>Amex</li><li>PayPal</li><li>Apple&nbsp;Pay</li><li>Klarna</li>
+    </ul>
+  </div>
+</footer>
+
+<!-- ─────────────────────────  CART DRAWER  ───────────────────────── -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="cart" id="cart" aria-label="Shopping cart" aria-hidden="true">
+  <header class="cart__head">
+    <h2>Your cart <span class="cart__count mono" id="cartCountLabel">0 items</span></h2>
+    <button class="cart__close" id="cartClose" aria-label="Close cart">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none"/></svg>
+    </button>
+  </header>
+
+  <div class="cart__body" id="cartBody">
+    <div class="cart__empty" id="cartEmpty">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <rect x="26" y="42" width="68" height="52" rx="8" fill="none" stroke-width="5"/>
+        <path d="M26 58h68M60 42V26" fill="none" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <p>Nothing in here yet.</p>
+      <a class="link-arrow" href="#catalog" data-close-cart>Browse the catalog
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none"/></svg>
+      </a>
+    </div>
+    <ul class="cart__list" id="cartList"></ul>
+  </div>
+
+  <footer class="cart__foot" id="cartFoot" hidden>
+    <div class="cart__row"><span>Subtotal</span><b id="cartSubtotal">$0</b></div>
+    <div class="cart__row cart__row--dim"><span>Express shipping</span><b id="cartShip">Free</b></div>
+    <div class="cart__row cart__row--total"><span>Total</span><b id="cartTotal">$0</b></div>
+    <button class="btn btn--solid btn--block" type="button">Checkout</button>
+    <p class="cart__note mono">Duties &amp; taxes included · 30-day returns</p>
+  </footer>
+</aside>
+
+<script src="app.js"></script>
+</body>
+</html>
